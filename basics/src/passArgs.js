@@ -5,22 +5,7 @@ import { GraphQLServer } from "graphql-yoga";
 const typeDefs = `
     type Query {
         greeting(name:String, position:String):String!
-        me:User!,
-        post:Post!,
         add(num1:Float!,num2:Float!):Float!
-    }
-    type User{
-        id:ID!,
-        name:String!,
-        email:String!,
-        age:Int,
-        above18:Boolean
-    }
-    type Post{
-        id:ID!,
-        title:String!,
-        body:String!,
-        published:Int!,
     }
  `;
 
@@ -37,22 +22,6 @@ const resolvers = {
       } else {
         return "hey whats your name??";
       }
-    },
-    me() {
-      return {
-        id: "1",
-        name: "Abhinav",
-        email: "tt",
-        above18: true,
-      };
-    },
-    post() {
-      return {
-        id: "1",
-        title: "Abhinav",
-        body: "tt",
-        published: 123231,
-      };
     },
   },
 };
